@@ -1,17 +1,34 @@
-# React + Vite
+# Pokédex React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida em React para consumir dados da **PokéAPI** utilizando **Axios**. O projeto exibe os 151 primeiros Pokémon organizados em cards e permite pesquisar qualquer um deles pelo nome em tempo real.
 
-Currently, two official plugins are available:
+Este projeto foi desenvolvido como atividade prática de consumo de APIs REST, componentização e gerenciamento de estado no React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- **Listagem de Pokémon:** Busca automática dos dados ao carregar a página utilizando `useEffect` e Axios.
+- **Busca em tempo real:** Campo de pesquisa que filtra os Pokémon pelo nome conforme o usuário digita.
+- **Feedback de carregamento:** Exibe um aviso na tela enquanto a requisição está em andamento.
+- **Tratamento de erros:** Caso ocorra falha na conexão com a API, uma mensagem amigável é exibida sem quebrar a interface.
+- **Componentização:** Cada card é renderizado por um componente próprio (`PokemonCard.jsx`) recebendo os dados via `props`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **React** (Hooks `useState` e `useEffect`)
+- **Vite** (Ambiente de desenvolvimento)
+- **JavaScript (ES6+)**
+- **Axios** (Requisições HTTP com instância configurada em `baseURL`)
+- **CSS3** (Estilização responsiva em grid)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# pokemon" 
+## Estrutura de Pastas
+
+```text
+src/
+├── components/
+│   └── PokemonCard.jsx   # Componente visual de cada card
+├── services/
+│   └── api.js            # Configuração da instância do Axios
+├── App.jsx               # Componente principal, estados e filtro
+├── App.css               # Estilos da aplicação
+├── index.css             # Reset global de estilos
+└── main.jsx              # Ponto de entrada do React
